@@ -9,12 +9,12 @@ export const BackgroundEffects: React.FC = () => {
       {/* 2. Ambient Orange Radial Glows */}
       {/* Top Left Ambient for Brand Identity */}
       <div 
-        className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full orange-glow opacity-30" 
+        className="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full orange-glow opacity-30" 
       />
       
       {/* Desktop Hero Accent (Right side glow for the cutout) */}
       <div 
-        className="hidden lg:block absolute top-1/4 -right-24 w-[600px] h-[600px] rounded-full orange-glow opacity-35" 
+        className="hidden lg:block absolute top-1/4 -right-24 w-[620px] h-[620px] rounded-full orange-glow opacity-35" 
       />
 
       {/* Mobile Subtle Center Glow */}
@@ -44,11 +44,11 @@ export const BackgroundEffects: React.FC = () => {
 
       {/* 4. Giant Watermark Typography in Background */}
       <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-12 flex-col items-end select-none pointer-events-none">
-        <span className="font-display text-[160px] font-black leading-none text-white/[0.025] tracking-tighter">
+        <span className="font-heading text-[140px] font-black leading-none text-white/[0.025] tracking-tighter">
           ESTRATEGISTA
         </span>
-        <span className="text-[72px] font-bold text-white/[0.02] tracking-[0.25em] -mt-6">
-          RAPHAEL MOTOC
+        <span className="font-heading text-[60px] font-extrabold text-white/[0.02] tracking-[0.25em] -mt-4">
+          RAPHAEL NONATO
         </span>
       </div>
 

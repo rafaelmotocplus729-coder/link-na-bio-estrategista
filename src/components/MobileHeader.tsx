@@ -11,12 +11,12 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({ profile }) => {
     <div className="flex flex-col items-center text-center pt-2 pb-6 px-4 select-none">
       {/* 1. Live / Status Pill */}
       {profile.liveStatus.active && (
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF6A1A]/10 border border-[#FF6A1A]/30 mb-5 shadow-sm">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF6A1A]/10 border border-[#FF6A1A]/35 mb-5 shadow-sm">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6A1A] opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6A1A]" />
           </span>
-          <span className="text-[11px] font-bold text-[#FF6A1A] tracking-wider uppercase">
+          <span className="text-[11px] font-bold text-[#FF6A1A] tracking-wider uppercase font-heading">
             {profile.liveStatus.label}
           </span>
           <Flame className="w-3.5 h-3.5 text-[#FF6A1A]" />
@@ -26,7 +26,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({ profile }) => {
       {/* 2. Avatar with Luxury Dual-Ring Glow */}
       <div className="relative mb-4 group cursor-pointer">
         {/* Glow Ring Behind */}
-        <div className="absolute -inset-1.5 bg-gradient-to-r from-[#FF6A1A] to-[#FF8438] rounded-full blur-md opacity-40 group-hover:opacity-70 transition duration-500" />
+        <div className="absolute -inset-1.5 bg-gradient-to-r from-[#FF6A1A] to-[#FF8438] rounded-full blur-md opacity-40 group-hover:opacity-75 transition duration-500" />
         
         {/* Outer Border */}
         <div className="relative w-24 h-24 rounded-full p-1 bg-gradient-to-b from-[#FF6A1A] via-zinc-800 to-black">
@@ -47,17 +47,21 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({ profile }) => {
 
       {/* 3. Name & Handle */}
       <div className="flex items-center justify-center gap-2 mb-1">
-        <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight font-display">
+        <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight font-heading">
           {profile.name}
         </h1>
       </div>
 
-      <p className="text-xs sm:text-sm font-semibold text-[#FF6A1A] tracking-wide uppercase mb-2">
+      <p className="text-xs sm:text-sm font-bold text-[#FF6A1A] tracking-wider uppercase mb-1.5 font-heading">
         {profile.title}
       </p>
 
+      <span className="inline-block text-xs font-semibold text-zinc-400 mb-3 bg-white/[0.04] px-3 py-1 rounded-full border border-white/10">
+        {profile.handle}
+      </span>
+
       {/* 4. Bio Description */}
-      <p className="text-xs sm:text-sm text-zinc-400 max-w-md mx-auto leading-relaxed">
+      <p className="text-xs sm:text-sm text-zinc-300 max-w-md mx-auto leading-relaxed">
         {profile.bio}
       </p>
     </div>

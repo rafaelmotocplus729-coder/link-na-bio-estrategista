@@ -14,12 +14,12 @@ export const App: React.FC = () => {
   const otherLinks = bioData.links.filter(l => !l.isFeatured);
 
   return (
-    <div className="relative min-h-screen text-white font-sans antialiased overflow-x-hidden">
+    <div className="relative min-h-screen text-white font-sans antialiased overflow-x-hidden selection:bg-[#FF6A1A] selection:text-white">
       {/* Background Ambience & Fluid Curves */}
       <BackgroundEffects />
 
       {/* Main Container */}
-      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
         
         {/* DESKTOP SPLIT LAYOUT (>= 1024px) */}
         <div className="hidden lg:grid lg:grid-cols-12 lg:gap-12 lg:items-start">
@@ -28,19 +28,19 @@ export const App: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col justify-start">
             
             {/* Brand Header */}
-            <div className="mb-8">
-              <div className="flex items-center gap-3 mb-3">
+            <div className="mb-7">
+              <div className="flex items-center gap-3.5 mb-3">
                 <img 
                   src="/logo-icon.png" 
                   alt="Logo O Estrategista" 
-                  className="w-10 h-10 object-contain drop-shadow-[0_0_12px_rgba(255,106,26,0.3)]" 
+                  className="w-11 h-11 object-contain drop-shadow-[0_0_14px_rgba(255,106,26,0.35)]" 
                 />
                 <div>
-                  <h1 className="text-xl font-black tracking-tight text-white font-display">
-                    O ESTRATEGISTA
+                  <h1 className="text-xl font-black tracking-tight text-white font-heading">
+                    {bioData.name.toUpperCase()}
                   </h1>
-                  <p className="text-xs font-semibold text-[#FF6A1A] tracking-wider uppercase">
-                    {bioData.name} • Carreiras Policiais
+                  <p className="text-xs font-bold text-[#FF6A1A] tracking-wider uppercase font-heading">
+                    O Estrategista • Carreiras Policiais
                   </p>
                 </div>
               </div>
@@ -50,12 +50,12 @@ export const App: React.FC = () => {
               {/* Section Title (Estilo Igor Rodrigues: "LINKS QUE PODEM TE AJUDAR") */}
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles className="w-4 h-4 text-[#FF6A1A]" />
-                <h2 className="text-lg font-black tracking-wider text-white uppercase font-display">
+                <h2 className="text-lg font-black tracking-wider text-white uppercase font-heading">
                   {bioData.tagline}
                 </h2>
               </div>
               <p className="text-xs text-zinc-400">
-                Selecione abaixo a ferramenta ou canal que você deseja acessar agora.
+                Selecione abaixo o recurso, simulado ou canal que deseja acessar:
               </p>
             </div>
 
@@ -78,7 +78,7 @@ export const App: React.FC = () => {
 
             {/* Social Channels */}
             <div className="mt-8 pt-6 border-t border-white/[0.08]">
-              <p className="text-[11px] font-bold text-center text-zinc-500 uppercase tracking-widest mb-3">
+              <p className="text-[11px] font-bold text-center text-zinc-400 uppercase tracking-widest mb-3 font-heading">
                 Canais Oficiais & Redes Sociais
               </p>
               <SocialRow socials={bioData.socials} />
@@ -88,7 +88,7 @@ export const App: React.FC = () => {
           </div>
 
           {/* RIGHT COLUMN: Authority Hero Visual (Sticky Desktop) */}
-          <div className="lg:col-span-5 sticky top-10">
+          <div className="lg:col-span-5 sticky top-8">
             <HeroDesktop profile={bioData} />
           </div>
         </div>
@@ -101,7 +101,7 @@ export const App: React.FC = () => {
           {/* Section Divider */}
           <div className="flex items-center justify-center gap-3 my-4">
             <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-white/20" />
-            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-zinc-400 font-display">
+            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-zinc-400 font-heading">
               {bioData.tagline}
             </span>
             <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-white/20" />

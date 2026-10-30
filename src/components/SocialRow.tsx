@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProfileConfig } from '../config/bioData';
-import { MessageCircle, Send, Mail } from 'lucide-react';
+import { MessageCircle, Users, Mail } from 'lucide-react';
 
 interface SocialRowProps {
   socials: ProfileConfig['socials'];
@@ -25,11 +25,11 @@ const YoutubeIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }
 
 export const SocialRow: React.FC<SocialRowProps> = ({ socials }) => {
   const items = [
-    { name: 'Instagram', url: socials.instagram, icon: InstagramIcon, color: 'hover:text-pink-500 hover:border-pink-500/30' },
-    { name: 'YouTube', url: socials.youtube, icon: YoutubeIcon, color: 'hover:text-red-500 hover:border-red-500/30' },
-    { name: 'WhatsApp', url: socials.whatsapp, icon: MessageCircle, color: 'hover:text-emerald-400 hover:border-emerald-500/30' },
-    { name: 'Telegram', url: socials.telegram, icon: Send, color: 'hover:text-sky-400 hover:border-sky-500/30' },
-    { name: 'Email', url: socials.email ? `mailto:${socials.email}` : undefined, icon: Mail, color: 'hover:text-amber-400 hover:border-amber-500/30' },
+    { name: 'Instagram', url: socials.instagram, icon: InstagramIcon, label: 'Instagram', color: 'hover:text-pink-500 hover:border-pink-500/30' },
+    { name: 'YouTube', url: socials.youtube, icon: YoutubeIcon, label: 'YouTube', color: 'hover:text-red-500 hover:border-red-500/30' },
+    { name: 'WhatsApp', url: socials.whatsapp, icon: MessageCircle, label: 'WhatsApp', color: 'hover:text-emerald-400 hover:border-emerald-500/30' },
+    { name: 'Grupo VIP', url: socials.whatsappGroup, icon: Users, label: 'Grupo VIP', color: 'hover:text-amber-400 hover:border-amber-500/30' },
+    { name: 'Email', url: socials.email ? `mailto:${socials.email}` : undefined, icon: Mail, label: 'E-mail', color: 'hover:text-sky-400 hover:border-sky-500/30' },
   ].filter(item => Boolean(item.url));
 
   return (
@@ -43,7 +43,8 @@ export const SocialRow: React.FC<SocialRowProps> = ({ socials }) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={item.name}
-            className={`w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-zinc-400 transition-all duration-300 hover:bg-white/[0.08] hover:scale-105 active:scale-95 ${item.color}`}
+            title={item.name}
+            className={`w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-zinc-400 transition-all duration-300 hover:bg-white/[0.08] hover:scale-105 active:scale-95 cursor-pointer ${item.color}`}
           >
             <Icon className="w-4 h-4" />
           </a>
